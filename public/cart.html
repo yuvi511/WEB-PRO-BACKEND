@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+
+      button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+
+      hr {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border: none;
+        border-top: 1px solid #ccc;
+      }
+
+      textarea {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ADD TO CART</h1>
+
+    <form method="POST" action="/addProduct">
+      <label>Name:</label>
+      <input type="text" name="name" /><br />
+
+      <label>Price:</label>
+      <input type="number" name="price" /><br />
+
+      <button type="submit">Add Product</button>
+    </form>
+
+    <hr />
+
+    <form method="POST" action="/calculateTotalPrice">
+      <label>Products:</label><br />
+      <textarea name="products" rows="4" cols="50"></textarea><br />
+
+      <button type="submit">Calculate Total Price</button>
+    </form>
+  </body>
+</html>

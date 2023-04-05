@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add to Cart</title>
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+		}
+		label {
+			margin-top: 10px;
+			margin-bottom: 5px;
+			text-align: center;
+			font-weight: bold;
+		}
+		input[type="submit"] {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #3498db;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		input[type="submit"]:hover {
+			background-color: #2980b9;
+		}
+		#bill {
+			margin-top: 20px;
+			text-align: center;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<form action="/cart" method="POST">
+		<label for="product">Product:</label>
+		<select id="product" name="product">
+			<option value="">Select a product...</option>
+			<% products.forEach(function(product) { %>
+				<option value="<%= product.name %>">$<%= product.price.toFixed(2) %> - <%= product.name %></option>
+			<% }); %>
+		</select>
+		<label for="quantity">Quantity:</label>
+		<input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+		<input type="submit" value="Add to Cart">
+	</form>
+	<div id="bill">
+		<% if (totalPrice !== null) { %>
+			Total price: $<%= totalPrice.toFixed(2) %>
+		<% } %>
+	</div>
+</body>
+</html>
+			
