@@ -9,6 +9,8 @@
   "author": "Yuvraj Saha",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "crypto": "^1.0.1",
     "express": "^4.18.2",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.3"
