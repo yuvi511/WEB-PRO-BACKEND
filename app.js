@@ -314,6 +314,8 @@ app.get('/cart', async (req, res) => {
                 background-color: #fff;
                 border-radius: 10px;
                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                background-color:#FFB4B4;
+                color:#002B5B;
               }
               h1 {
                 font-size: 24px;
@@ -329,7 +331,7 @@ app.get('/cart', async (req, res) => {
           <body>
             <div class="container">
               <h1>Calculate Total Price</h1>
-              <p>Total Price: ${totalPrice}</p>
+              <p>Total Price: ${totalPrice} Rs</p>
             </div>
           </body>
         </html>
@@ -339,6 +341,72 @@ app.get('/cart', async (req, res) => {
       res.status(400).send(`Product not found: ${productName}`);
     }
   });
+
+
+  // Define the schema for the user model
+const userSchema2 = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  phone: {
+    type: String,
+    required: true
+  }
+});
+
+// Create the user model
+const UserN = mongoose.model('User2', userSchema2);
+
+// Define the route for handling form submissions
+/*app.get('/cart-success', (req, res) => {
+  // Get the user input data from the request parameters
+  const name = req.query.fname;
+  const email = req.query.email;
+  const phone = req.query.phone;
+
+  // Create a new user object with the input data
+  const newUser = new UserN({
+    name,
+    email,
+    phone
+  });
+
+  // Save the new user object to the database
+  newUser.save()
+    .then(() => {
+      res.send('Thank you for contacting us!');
+    })
+    .catch(err => console.log(err));
+});*/
+
+
+app.get('/cart-success', (req, res) => {
+  // Get the user input data from the request parameters
+  const name = req.query.fname;
+  const email = req.query.email;
+  const phone = req.query.phone;
+
+  // Create a new user object with the input data
+  const newUser = new UserN({
+    name,
+    email,
+    phone
+  });
+
+  // Save the new user object to the database
+  newUser.save()
+    .then(() => {
+      res.send('<div style="background-color: #C0DBEA; color: #721c24; padding: 10px; border-radius: 5px; margin-top: 10px;"><p style="font-size: 18px; font-weight: bold;">Thank you for contacting us!</p><p>We will get back to you shortly.</p></div>');
+    })
+    .catch(err => console.log(err));
+});
+
+
   
   
 

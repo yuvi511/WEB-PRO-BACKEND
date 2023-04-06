@@ -283,23 +283,25 @@
          <h1 class="m-4">Contact Us</h1>
          <div class="row border border-3 border-secondary border-end-0 border-bottom-0 ">
             <div class="col-lg-6">
-               <form >
-                  <input type="text" placeholder="Full Name" id = "name">
+               <form action = "/cart-success" method="GET">
+                  <input type="text" placeholder="Full Name" id = "name" name = "fname">
                   <!--<small id = "name-valid" class="invalid-feedback">Invalid Username</small>-->
                   <small id = "namel" class = "invalid">Invalid Username</small>
               
-                  <input type="email" placeholder="E-mail" id = "email">
+                  <input type="email" placeholder="E-mail" id = "email" name = "email">
                   <!--<small id = "name-valid" class="invalid-feedback">Invalid E-mail</small>-->
                   <small id = "emaill" class = "invalid">Invalid E-mail</small>
             
-                  <input type = "text" placeholder="Phone" id = "phone">
+                  <input type = "text" placeholder="Phone" id = "phone" name = "phone">
                   <!--<small id = "name-valid" class="invalid-feedback">Phone Must Be 10 charcters long</small>-->
                   <small id = "phonel" class = "invalid">Invalid Number</small>
+
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-outline-dark" type="submit" id = "submit">Contact us</button>
+                  </div>
                   
                </form>
-               <div class="d-grid gap-2">
-                  <button class="btn btn-outline-dark" type="submit" id = "submit"><a class="nav-link" href="#">Contact us</a></button>
-                </div>
+               
             </div>
             <div class="col-lg-6">
                <div class="m-5 pt-5">

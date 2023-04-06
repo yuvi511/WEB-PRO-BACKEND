@@ -66,7 +66,7 @@ phone.addEventListener('blur',()=>{
 let submit = document.getElementById('submit');
 
 
-submit.addEventListener('click',(e)=>{
+/*submit.addEventListener('click',(e)=>{
     let success = document.getElementById('success');
     let failure  = document.getElementById('failure')
     e.preventDefault();
@@ -78,4 +78,4 @@ submit.addEventListener('click',(e)=>{
    else{
        failure.classList.add('show');
    }
-})
+})*/
